@@ -1,25 +1,14 @@
 name: CI
-
-on:
-  push:
-    branches: [master]
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
-
-      - name: Check formatting
-        run: test -z "$(gofmt -l .)"
-
-      - name: Vet
-        run: go vet ./...
-
-      - name: Test
-        run: go test ./... -race
+      - run: test -z "$(gofmt -l .)"
+      - run: go vet ./...
+      - run: go test ./... -race

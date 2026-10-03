@@ -1,6 +1,6 @@
 package main
 
-func yearsUntilEvents(age int ) (yearsUntilAdult int, yearsUntilDrinking int, yearsUntilCarRental int) {
+func yearsUntilEvents(age int) (yearsUntilAdult int, yearsUntilDrinking int, yearsUntilCarRental int) {
 	// don't touch below this line
 
 	yearsUntilAdult = 18 - age
@@ -15,5 +15,5 @@ func yearsUntilEvents(age int ) (yearsUntilAdult int, yearsUntilDrinking int, ye
 	if yearsUntilCarRental < 0 {
 		yearsUntilCarRental = 0
 	}
-	return 
+	return
 }

@@ -1,9 +1,9 @@
 package main
 
-func main(){
+func main() {
 	// user,err := getUser()
 	// if err!=nil{
-		// return
+	// return
 	// }
 	// user
 }

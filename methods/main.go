@@ -6,16 +6,16 @@ func concat(s1 string, s2 string) string {
 	return s1 + s2
 }
 
-func getLan()(string,string,int){
+func getLan() (string, string, int) {
 	return "Java", "Golang", 2
 }
 
-func processIt(fn func(a int) int) int{
+func processIt(fn func(a int) int) int {
 	return fn(1)
 }
 
-func returnFun() func(a int) int{
-	fn := func(a int)int{
+func returnFun() func(a int) int {
+	fn := func(a int) int {
 		return 122
 	}
 	return fn
@@ -28,9 +28,9 @@ func main() {
 
 	lang1, lang2, v := getLan()
 
-	fmt.Printf("%s %s %v\n",lang1,lang2,v)
+	fmt.Printf("%s %s %v\n", lang1, lang2, v)
 
-	fn := func(a int) int{
+	fn := func(a int) int {
 		return 2
 	}
 	fmt.Println(processIt(fn))

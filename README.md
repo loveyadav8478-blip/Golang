@@ -1,3 +1,5 @@
+![CI](https://github.com/loveyadav8478-blip/Golang/actions/workflows/ci.yml/badge.svg)
+
 # Golang
 
 A hands-on collection of Go programs I wrote while learning the language. Each folder focuses on one core concept, with small runnable examples you can read, run and tweak.

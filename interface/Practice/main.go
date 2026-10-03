@@ -1,35 +1,34 @@
 package main
 
-type employee interface{
+type employee interface {
 	getName() string
 	getSalary() int
 }
 
-type fullTime struct{
-	name string
+type fullTime struct {
+	name   string
 	salary int
 }
 
-type contractor struct{
-	name string
-	hourlyPay int
+type contractor struct {
+	name         string
+	hourlyPay    int
 	hoursPerYear int
 }
 
-func(c contractor) getMessage() string{
+func (c contractor) getMessage() string {
 	return c.name
 }
-func(c contractor) getName() string{
+func (c contractor) getName() string {
 	return c.name
 }
-func(c contractor) getSalary() int{
-	return c.hourlyPay*c.hoursPerYear
+func (c contractor) getSalary() int {
+	return c.hourlyPay * c.hoursPerYear
 }
 
-
-func(ft fullTime) getSalary() int {
+func (ft fullTime) getSalary() int {
 	return ft.salary
 }
-func(ft fullTime) getName() string {
+func (ft fullTime) getName() string {
 	return ft.name
 }

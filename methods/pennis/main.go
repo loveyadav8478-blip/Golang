@@ -1,13 +1,13 @@
 package main
 
 func getMonthlyPrice(tier string) int {
-	switch tier{
+	switch tier {
 	case "basic":
-		return 100*100
+		return 100 * 100
 	case "premium":
-		return 150*100
+		return 150 * 100
 	case "enterprise":
-		return 500*100
+		return 500 * 100
 	default:
 		return 0
 	}
