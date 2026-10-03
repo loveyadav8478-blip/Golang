@@ -1,34 +1,41 @@
 package main
 
-type employee interface {
-	getName() string
-	getSalary() int
+import "fmt"
+
+type paymenter interface{
+	pay(amount float32)
+	refund(amount float32, account string)
 }
 
-type fullTime struct {
-	name   string
-	salary int
+type payment struct{
+	gateway paymenter
+}
+type razorPay struct{}
+type stripe struct{}
+
+func(p payment) makePayment(amount float32){
+	p.gateway.pay(amount)
 }
 
-type contractor struct {
-	name         string
-	hourlyPay    int
-	hoursPerYear int
+func(p razorPay) pay(amount float32){
+	fmt.Println("Payment successful using Razorpay of ", amount)
+}
+func(p razorPay) refund(amount float32, account string){
+	fmt.Println("Payment successful using Razorpay of account ", amount,account)
 }
 
-func (c contractor) getMessage() string {
-	return c.name
-}
-func (c contractor) getName() string {
-	return c.name
-}
-func (c contractor) getSalary() int {
-	return c.hourlyPay * c.hoursPerYear
+func(p stripe) pay(amount float32){
+	fmt.Println("Payment successful using Stripe of ", amount)
 }
 
-func (ft fullTime) getSalary() int {
-	return ft.salary
+func(p stripe) refund(amount float32, account string){
+	fmt.Println("Payment successful using Razorpay of account ", amount,account)
 }
-func (ft fullTime) getName() string {
-	return ft.name
+func main(){
+
+	newRazorPaymentpayment := razorPay{}
+	newPayment := payment{
+		gateway: newRazorPaymentpayment,
+	}
+	newPayment.makePayment(100)	
 }
