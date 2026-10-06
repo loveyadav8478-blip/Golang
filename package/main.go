@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-
+	"github.com/fatih/color"
 	"github.com/loveyadav8478-blip/Golang/auth"
 	"github.com/loveyadav8478-blip/Golang/user"
 )
@@ -16,6 +16,8 @@ func main() {
 		Name:  "Love Yadav",
 		Email: "user.12@gmail.com",
 	}
-	fmt.Println(user.Email, user.Name)
+	// fmt.Println(user.Email, user.Name)
+	color.Red(user.Email)
+	color.Green(user.Name)
 
 }
