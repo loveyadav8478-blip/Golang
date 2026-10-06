@@ -1,6 +1,6 @@
 package user
 
-type User struct{
+type User struct {
 	Email string
-	Name string
+	Name  string
 }
